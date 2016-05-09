@@ -1,0 +1,29 @@
+
+{
+  "name": "Table to CSV",
+  "description": "You can save table data to a CSV file from the menu, when you right click on a table area.",
+  "version": "1.0.0",
+  "permissions": [
+      "contextMenus",
+      "activeTab",
+      "http://*/"
+  ],
+  "icons": {
+    "16":"icon/icon_16.png",
+    "48":"icon/icon_48.png",
+    "128":"icon/icon_128.png"
+  },
+  "content_scripts":[
+      {
+          "matches": ["http://*/**"],
+          "js": ["jquery2.js", "inject.js"],
+          "css": [],
+          "run_at": "document_end"
+      }
+  ],
+  "background": {
+    "persistent": false,
+    "page": "background.html"
+  },
+  "manifest_version": 2
+}
